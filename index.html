@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>StreamMate</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #0d1117; /* fundo GitHub dark */
+      color: #c9d1d9;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Logo opaca no fundo */
+    body::before {
+      content: "";
+      background: url("/assets/Flag_of_France_Flat_Round.png") center center no-repeat;
+      background-size: 300px;
+      opacity: 0.05;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+
+    header {
+      background-color: #161b22;
+      width: 100%;
+      padding: 16px 0;
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 720px;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    .input-group {
+      display: flex;
+      width: 100%;
+      max-width: 720px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    #urlInput {
+      flex: 1;
+      font-size: 16px;
+      padding: 14px 16px;
+      border: none;
+      outline: none;
+      background-color: #161b22;
+      color: #c9d1d9;
+    }
+
+    #formatSelect {
+      font-size: 16px;
+      padding: 14px 12px;
+      border: none;
+      background-color: #21262d;
+      color: #c9d1d9;
+      cursor: pointer;
+    }
+
+    #downloadBtn {
+      background-color: #f85149; /* vermelho GitHub danger */
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #downloadBtn:hover { background-color: #da3633; }
+
+    #log {
+      width: 100%;
+      max-width: 720px;
+      min-height: 160px;
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 16px;
+      font-family: monospace;
+      font-size: 14px;
+      color: #8b949e;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #161b22;
+      width: 100%;
+      padding: 16px;
+      text-align: center;
+      font-size: 14px;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: 1;
+    }
+
+    footer img {
+      width: 100px;
+      height: 100px;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>Faça seu download!</header>
+
+  <main>
+    <div class="input-group">
+      <input id="urlInput" type="text" placeholder="Cole a URL do vídeo aqui" />
+      <select id="formatSelect">
+        <option value="mp4">MP4</option>
+        <option value="webm">WEBM</option>
+        <option value="mp3">MP3 (áudio)</option>
+      </select>
+      <button id="downloadBtn">Baixar</button>
+    </div>
+    <pre id="log"></pre>
+  </main>
+
+  <footer>
+    <div>Gostou do projeto? Apoie com um café e se torne um apoiador!</div>
+    <a href="https://nubank.com.br/cobrar/8xojet/68aba781-6241-41a4-ab54-ff7d9a3f98f0" target="_blank">Clique aqui para doar.</a>
+  </footer>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

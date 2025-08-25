@@ -1,0 +1,48 @@
+{
+  "name": "mediafetch",
+  "version": "1.0.0",
+  "description": "Youtube Downloader",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "youtube",
+    "downloader",
+    "electron",
+    "yt-dlp",
+    "ffmpeg",
+    "media"
+  ],
+  "author": "Jhonatan Geronimo",
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "electron": "^37.2.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.mediafetch.app",
+    "productName": "MediaFetch",
+    "files": [
+      "**/*",
+      "bin/yt-dlp.exe",
+      "bin/ffmpeg.exe"
+    ],
+    "extraResources": [
+      {
+        "from": "bin/",
+        "to": "bin/"
+      }
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
+  }
+}

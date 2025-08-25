@@ -1,7 +1,5 @@
 # MediaFetch - Youtube Downloader
 
-![Doggo Dançando](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGhnZG0xeDZkbXliNTRpZHRldTJod3VnemcxOTdidHB0dWZzOWw3MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m0MfjLtKOgTPG/giphy.gif)
-
 MediaFetch é um **app desktop para baixar vídeos e áudios do YouTube** de forma simples, feito com **Electron**, **yt-dlp** e **ffmpeg**.
 Ele permite baixar em **MP4**, **WEBM** ou apenas o **áudio em MP3**.
 
